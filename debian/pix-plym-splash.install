@@ -1,0 +1,3 @@
+pix.script /usr/share/plymouth/themes/pix
+pix.plymouth /usr/share/plymouth/themes/pix
+splash.png /usr/share/plymouth/themes/pix

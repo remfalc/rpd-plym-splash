@@ -1,0 +1,13 @@
+Source: pix-plym-splash
+Section: x11
+Priority: optional
+Maintainer: Simon Long <simon@raspberrypi.org>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+Homepage: http://raspberrypi.org/
+
+Package: pix-plym-splash
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, plymouth (>= 0.9.2), plymouth-themes (>= 0.9.2)
+Description: PIXEL splashscreen
+ Plymouth theme with PIXEL splashscreen
