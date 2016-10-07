@@ -7,7 +7,7 @@ Standards-Version: 3.9.5
 Homepage: http://raspberrypi.org/
 
 Package: pix-plym-splash
-Architecture: any
+Architecture: all
 Depends: ${shlibs:Depends}, ${misc:Depends}, plymouth (>= 0.9.2), plymouth-themes (>= 0.9.2)
 Description: PIXEL splashscreen
  Plymouth theme with PIXEL splashscreen
