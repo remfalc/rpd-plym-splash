@@ -5,7 +5,11 @@
 
 set -e
 
-sed -i /boot/cmdline.txt -e "s/rootwait quiet splash plymouth.ignore-serial-consoles/rootwait/"
+if [ -e /boot/cmdline.txt ] ; then
+	sed -i /boot/cmdline.txt -e "s/ quiet//"
+	sed -i /boot/cmdline.txt -e "s/ splash//"
+	sed -i /boot/cmdline.txt -e "s/ plymouth.ignore-serial-consoles//"
+fi
 
 # summary of how this script can be called:
 #        * <prerm> `remove'

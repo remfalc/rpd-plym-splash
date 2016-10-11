@@ -1,3 +1,15 @@
+pix-plym-splash (0.3) jessie; urgency=medium
+
+  * Postrm script changed to prerm
+
+ -- Simon Long <simon@raspberrypiorg>  Tue, 11 Oct 2016 10:14:35 +0100
+
+pix-plym-splash (0.2) jessie; urgency=medium
+
+  * Modify install scripts to check for existence of config files.
+
+ -- Simon Long <simon@raspberrypiorg>  Mon, 10 Oct 2016 18:51:42 +0100
+
 pix-plym-splash (0.1-1.1) jessie; urgency=medium
 
   * Architecture corrected

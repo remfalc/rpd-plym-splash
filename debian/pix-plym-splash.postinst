@@ -7,7 +7,9 @@ set -e
 
 plymouth-set-default-theme -R pix
 if ! service lightdm status | grep -q inactive ; then
-	sed -i /boot/cmdline.txt -e "s/rootwait/rootwait quiet splash plymouth.ignore-serial-consoles/"
+	if [ -e /boot/cmdline.txt ] ; then
+		sed -i /boot/cmdline.txt -e "s/$/ quiet splash plymouth.ignore-serial-consoles/"
+	fi
 fi
 
 # summary of how this script can be called:
