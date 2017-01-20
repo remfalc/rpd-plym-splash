@@ -5,13 +5,6 @@
 
 set -e
 
-plymouth-set-default-theme -R pix
-if ! service lightdm status | grep -q inactive ; then
-	if [ -e /boot/cmdline.txt ] ; then
-		sed -i /boot/cmdline.txt -e "s/$/ quiet splash plymouth.ignore-serial-consoles/"
-	fi
-fi
-
 # summary of how this script can be called:
 #        * <postinst> `configure' <most-recently-configured-version>
 #        * <old-postinst> `abort-upgrade' <new version>
@@ -27,6 +20,12 @@ fi
 
 case "$1" in
     configure)
+      plymouth-set-default-theme -R pix
+      if /usr/sbin/service lightdm status | grep -wq active ; then
+	    if [ -e /boot/cmdline.txt ] ; then
+		  sed -i /boot/cmdline.txt -e "s/$/ quiet splash plymouth.ignore-serial-consoles/"
+	    fi
+      fi
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

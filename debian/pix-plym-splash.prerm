@@ -5,12 +5,6 @@
 
 set -e
 
-if [ -e /boot/cmdline.txt ] ; then
-	sed -i /boot/cmdline.txt -e "s/ quiet//"
-	sed -i /boot/cmdline.txt -e "s/ splash//"
-	sed -i /boot/cmdline.txt -e "s/ plymouth.ignore-serial-consoles//"
-fi
-
 # summary of how this script can be called:
 #        * <prerm> `remove'
 #        * <old-prerm> `upgrade' <new-version>
@@ -25,6 +19,14 @@ fi
 
 case "$1" in
     remove|upgrade|deconfigure)
+      PTHEME=$(plymouth-set-default-theme)
+      if [ "$PTHEME" = "pix" ] ; then
+        if [ -e /boot/cmdline.txt ] ; then
+	      sed -i /boot/cmdline.txt -e "s/ quiet//"
+	      sed -i /boot/cmdline.txt -e "s/ splash//"
+	      sed -i /boot/cmdline.txt -e "s/ plymouth.ignore-serial-consoles//"
+        fi
+      fi
     ;;
 
     failed-upgrade)
