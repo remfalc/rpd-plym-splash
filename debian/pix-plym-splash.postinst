@@ -20,11 +20,13 @@ set -e
 
 case "$1" in
     configure)
-      plymouth-set-default-theme -R pix
-      if /usr/sbin/service lightdm status | grep -wq active ; then
-	    if [ -e /boot/cmdline.txt ] ; then
-		  sed -i /boot/cmdline.txt -e "s/$/ quiet splash plymouth.ignore-serial-consoles/"
-	    fi
+      if [ -z "${2}" ]; then
+        plymouth-set-default-theme -R pix
+        if systemctl get-default | grep -q graphical ; then
+	      if [ -e /boot/cmdline.txt ] ; then
+		    sed -i /boot/cmdline.txt -e "s/$/ quiet splash plymouth.ignore-serial-consoles/"
+	      fi
+        fi
       fi
     ;;
 

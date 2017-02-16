@@ -1,3 +1,9 @@
+pix-plym-splash (0.8) jessie; urgency=medium
+
+  * Corrected post-install logic for use in image creation
+
+ -- Simon Long <simon@raspberrypi.org>  Thu, 16 Feb 2017 13:50:28 +0000
+
 pix-plym-splash (0.7) jessie; urgency=medium
 
   * Splash version number incremented to 1.2
