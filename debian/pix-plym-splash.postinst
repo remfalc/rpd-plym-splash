@@ -24,7 +24,15 @@ case "$1" in
         plymouth-set-default-theme -R pix
         if systemctl get-default | grep -q graphical ; then
 	      if [ -e /boot/cmdline.txt ] ; then
-		    sed -i /boot/cmdline.txt -e "s/$/ quiet splash plymouth.ignore-serial-consoles/"
+			if ! grep -qw quiet /boot/cmdline.txt ; then
+				sed -i /boot/cmdline.txt -e "s/$/ quiet/"
+			fi
+			if ! grep -qw splash /boot/cmdline.txt ; then
+				sed -i /boot/cmdline.txt -e "s/$/ splash/"
+			fi
+			if ! grep -q plymouth.ignore-serial-consoles /boot/cmdline.txt ; then
+				sed -i /boot/cmdline.txt -e "s/$/ plymouth.ignore-serial-consoles/"
+			fi
 	      fi
         fi
       fi
