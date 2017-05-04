@@ -1,5 +1,5 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: pix-plym-splash
+Upstream-Name: rpd-plym-splash
 
 Files: *
 Copyright: 2016 Simon Long <simon@raspberrypi.org>

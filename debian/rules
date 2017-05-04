@@ -3,13 +3,13 @@
 DEB_TARGET_ARCH ?= $(shell dpkg-architecture -qDEB_TARGET_ARCH)
 
 override_dh_install:
-	mkdir -p debian/pix-plym-splash/usr/share/plymouth/themes/pix/
-	cp -ax pix.script debian/pix-plym-splash/usr/share/plymouth/themes/pix/
-	cp -ax pix.plymouth debian/pix-plym-splash/usr/share/plymouth/themes/pix/
+	mkdir -p debian/rpd-plym-splash/usr/share/plymouth/themes/pix/
+	cp -ax pix.script debian/rpd-plym-splash/usr/share/plymouth/themes/pix/
+	cp -ax pix.plymouth debian/rpd-plym-splash/usr/share/plymouth/themes/pix/
 ifeq ($(DEB_TARGET_ARCH),armhf)
-	cp -ax splash.png debian/pix-plym-splash/usr/share/plymouth/themes/pix/splash.png
+	cp -ax splash.png debian/rpd-plym-splash/usr/share/plymouth/themes/pix/splash.png
 else
-	cp -ax splash_deb.png debian/pix-plym-splash/usr/share/plymouth/themes/pix/splash.png
+	cp -ax splash_deb.png debian/rpd-plym-splash/usr/share/plymouth/themes/pix/splash.png
 endif
 	dh_install
 
