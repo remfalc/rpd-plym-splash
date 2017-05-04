@@ -16,7 +16,7 @@ Description: transitional package
 
 Package: rpd-plym-splash
 Replaces: pix-plym-splash (<< 0.10-1~)
-Breaks: pix-plym-splash (<< 0.10.1~)
+Breaks: pix-plym-splash (<< 0.10-1~)
 Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, plymouth (>= 0.9.2), plymouth-themes (>= 0.9.2)
 Description: Raspberry Pi Desktop splashscreen
