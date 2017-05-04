@@ -1,6 +1,6 @@
 [Plymouth Theme]
 Name=pix
-Description=Pixel Splash
+Description=Raspberry Pi Desktop Splash
 ModuleName=script
 
 [script]
