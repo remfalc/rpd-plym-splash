@@ -18,7 +18,7 @@ set -e
 
 
 case "$1" in
-    remove|upgrade|deconfigure)
+    remove|deconfigure)
       PTHEME=$(plymouth-set-default-theme)
       if [ "$PTHEME" = "pix" ] ; then
         if [ -e /boot/cmdline.txt ] ; then
@@ -29,7 +29,7 @@ case "$1" in
       fi
     ;;
 
-    failed-upgrade)
+    upgrade|failed-upgrade)
     ;;
 
     *)
