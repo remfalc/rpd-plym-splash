@@ -20,7 +20,7 @@ set -e
 
 case "$1" in
     configure)
-      if [ -z "${2}" ]; then
+      if [ -z "${2}" ] || grep -qw splash /proc/cmdline ; then
         plymouth-set-default-theme -R pix
         if systemctl get-default | grep -q graphical ; then
 	      if [ -e /boot/cmdline.txt ] ; then
