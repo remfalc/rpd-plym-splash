@@ -1,3 +1,9 @@
+rpd-plym-splash (0.15) stretch; urgency=medium
+
+  * Update splash screens to version 2.3
+
+ -- Simon Long <simon@raspberrypi.org>  Mon, 12 Mar 2018 11:47:30 +0000
+
 rpd-plym-splash (0.14) stretch; urgency=medium
 
   * Update splash screens to version 2.2
